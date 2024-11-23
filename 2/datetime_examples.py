@@ -22,7 +22,13 @@ def calculate_age(date_string: str) -> int:
 # 23.11
 # 24.11
 
+my_datetime = datetime.strptime("200999", "%f")
+print(my_datetime)
+
+# my_datetime = datetime(year=2000, month=10, day=1)
+# print(my_datetime.strftime("Today is %d, Month is %m and year is %Y"))
+
 
 # yyyy-mm-dd
-print(calculate_age("2000-01-01")) # 24
-print(calculate_age("2000-11-24"))
+# print(calculate_age("2000-01-01")) # 24
+# print(calculate_age("2000-11-24"))
