@@ -1,0 +1,66 @@
+[
+    {
+        "message_text": "How are you doing?",
+        "creation_date": "2024-12-21 16:53:52.180019",
+        "author": {
+            "first_name": "Ihor",
+            "last_name": "Last name",
+            "phone_number": "1234567890",
+            "id": 1
+        },
+        "recepient": {
+            "first_name": "Jane",
+            "last_name": "Last name",
+            "phone_number": "0987654321",
+            "id": 2
+        }
+    },
+    {
+        "message_text": "Hello, Ihor",
+        "creation_date": "2024-12-21 16:53:52.180018",
+        "author": {
+            "first_name": "Jane",
+            "last_name": "Last name",
+            "phone_number": "0987654321",
+            "id": 2
+        },
+        "recepient": {
+            "first_name": "Ihor",
+            "last_name": "Last name",
+            "phone_number": "1234567890",
+            "id": 1
+        }
+    },
+    {
+        "message_text": "Hello",
+        "creation_date": "2024-12-21 16:53:52.180011",
+        "author": {
+            "first_name": "Ihor",
+            "last_name": "Last name",
+            "phone_number": "1234567890",
+            "id": 1
+        },
+        "recepient": {
+            "first_name": "Jane",
+            "last_name": "Last name",
+            "phone_number": "0987654321",
+            "id": 2
+        }
+    },
+    {
+        "message_text": "TODO: clean the dishes",
+        "creation_date": "2024-12-21 16:53:52.180020",
+        "author": {
+            "first_name": "Ihor",
+            "last_name": "Last name",
+            "phone_number": "1234567890",
+            "id": 1
+        },
+        "recepient": {
+            "first_name": "Ihor",
+            "last_name": "Last name",
+            "phone_number": "1234567890",
+            "id": 1
+        }
+    }
+]
