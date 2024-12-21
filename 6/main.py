@@ -9,7 +9,7 @@ Message(message_text, author, recepient, creation_time)
 MessageSystem(messages)
 
 - додати метод, який буде виводити усі повідомлення від користувача до користувача
-- додати метод, який виводить усіх людей, яким ви колись писали
+- додати метод, який виводить усіх людей, яким користувач колись писав
 '''
 
 
@@ -43,6 +43,9 @@ class User:
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+    
+    def __repr__(self):
+        return str(self)
 
 # user = User('Ihor', 'Last name', '1234567890')
 # user.phone_number = ''
@@ -93,6 +96,31 @@ class MessageSystem(UserList):
                 # Чи автор це є user_one та отримувач це є user_two
                 # Чи автор це є user_two та отримувач це є user_one
         return sorted(result_messages)
+    
+    def find_all_chats(self, user: User) -> list[User]:
+        user_set = set()
+        # Пройтися по усім повідомленням
+        for message in self.data:
+            # Зробити перевірку:
+            # Всередині одного повідомлення дістати автора та отримувача
+            # if message.author == user or message.recepient == user:
+            
+            # Якщо автор - юзер:
+            if message.author == user:
+                user_set.add(message.recepient)
+                # додати отримувача
+
+            # Якщо отримувач юзер:
+            if message.recepient == user:
+                user_set.add(message.author)
+                # додати автора
+
+            # Якщо юзер і автор і отримувач:
+                # додати юзера
+        return user_set
+            
+
+
 
 
 user_one = User("Ihor", "Last name", "1234567890")
@@ -104,13 +132,15 @@ message_one = Message("Hello", user_one, user_two)
 message_two = Message("Hello, Ihor", user_two, user_one)
 message_three = Message("How are you doing?", user_one, user_two)
 
+message_four = Message("TODO: clean the dishes", user_one, user_one)
+
 print(message_two)
 
 # message_one < 1
 
 
 
-messages_list = [message_three, message_two, message_one]
+messages_list = [message_three, message_two, message_one, message_four]
 # print(message.message_text)
 # print(message.creation_date)
 
@@ -121,4 +151,8 @@ messages_list = [message_three, message_two, message_one]
 # print(message.creation_date)
 
 message_system = MessageSystem(messages_list)
-print(message_system.find_all_messages(user_one, user_two))
+print(message_system.find_all_chats(user_one))
+# print(message_system.find_all_messages(user_one, user_two))
+
+# my_set = {}
+# print(type(my_set))
